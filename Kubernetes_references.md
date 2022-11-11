@@ -67,6 +67,10 @@
            lables:
              type: front-end
          spec:
+           replicas: 6
+           selector:
+             matchLables:
+               type: front-end
            template:
              metadata:
                name: my-pod
@@ -76,10 +80,7 @@
               containers:
                 - name: nginx
                   image: nginx 
-           replicas: 6
-           selector:
-             matchLables:
-               type: front-end
+           
 
  when you create replica set , it automatically creates pods 
  
